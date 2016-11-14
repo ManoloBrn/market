@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^login/signedup/$', success ),
     url(r'^inventario/', include("Inventarios.urls"), name="inventarios-root"),
     url(r'^compras/', include("Compras.urls"), name="compras-root"),
+    url(r'^negocios/', include("Negocios.urls"), name="neogcios-root")
 
 ]
