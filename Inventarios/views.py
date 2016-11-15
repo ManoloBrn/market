@@ -15,4 +15,5 @@ class ProductosViewL(ListView):
 
 class ProductosViewD(DetailView):
 	model = Producto
+	context_object_name = "producto"
 	

@@ -1,10 +1,9 @@
 {% extends "main.html" %}
 {% block body %}
-	<h1>Form productos</h1>
+	<h1>Formulario de Negocios</h1>
 	<form action="" method="post">
 		{% csrf_token %}
 		{{form.as_p}}
 		<input type="submit">	
 	</form>
 {% endblock body %}
-

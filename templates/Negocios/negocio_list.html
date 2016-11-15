@@ -1,0 +1,7 @@
+{% extends "main.html" %}
+{% block body %}
+	<h1>Listado de Negocios</h1>
+	{% for negocio in negocios %}
+		{{negocio}}
+	{% endfor %}
+{% endblock body %}

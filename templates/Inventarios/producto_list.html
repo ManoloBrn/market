@@ -1,4 +1,7 @@
 {% extends "main.html" %}
 {% block body %}
-	hola
+	<h1>Listado de productos</h1>
+	{% for producto in productos %}
+		{{producto}}
+	{% endfor %}
 {% endblock body %}

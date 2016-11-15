@@ -4,6 +4,7 @@ from .models import Negocio
 # Create your views here.
 class NegocioViewD(DetailView):
 	model = Negocio
+	context_object_name = "negocio"
 
 class NegocioViewL(ListView):
 	model = Negocio
@@ -11,5 +12,6 @@ class NegocioViewL(ListView):
 
 class NegocioViewC(CreateView):
 	model = Negocio
+	fields = ["owner", "name", "streetAddress","phoneNumber"]
 	success_url='/negocio/list/'	
 

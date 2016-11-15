@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^create/$', ClienteCreateView.as_view(), name="create-clientes"),
     url(r'^login/signedup/$', success ),
     url(r'^inventario/', include("Inventarios.urls"), name="inventarios-root"),
-    url(r'^compras/', include("Transacciones.urls"), name="transacciones-root"),
-    url(r'^negocios/', include("Negocios.urls"), name="neogcios-root")
+    url(r'^negocios/', include("Negocios.urls"), name="negocios-root"),
+    url(r'^transacciones/', include("Transacciones.urls"), name="transacciones-root")
 
 ]
