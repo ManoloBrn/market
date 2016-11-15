@@ -1,4 +1,5 @@
 from django.db import models
+from login.models import Cliente
 from Inventarios.models import Producto
 from django.conf import settings
 
@@ -7,9 +8,9 @@ from django.conf import settings
 class Transaction(models.Model):
     #ID Transaction
     #ID vendedor
-    #ID del cliente
-    idCliente = models.ForeignKey(settings.AUTH_USER_MODEL,related_name="transaction_cliente")
-    idproducto = models.ForeignKey(Producto, related_name="producto_transaction")
+    #ID del client0e
+    cliente = models.ForeignKey(Cliente, related_name="transaction_cliente")
+    producto = models.ForeignKey(Producto, related_name="producto_transaction")
     name = models.CharField(max_length=20)
     quantity = models.IntegerField(default=0)
     total = models.FloatField(default=0)

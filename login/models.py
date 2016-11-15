@@ -9,7 +9,7 @@ class Cliente(AbstractUser):
     plan = models.CharField(max_length=30, blank=True, null=True) #opcional
     billing_address = models.CharField(max_length=30, blank=True, null=True) #opcional. Hash
     shipping_address= models.CharField(max_length=30, blank=True, null=True) # opcional. Hash
-
+    
 
 
 """
