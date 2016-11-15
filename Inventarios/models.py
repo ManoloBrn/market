@@ -1,5 +1,5 @@
 from django.db import models
-
+from Negocios.models import Negocio
 # Create your models here.
 class Producto(models.Model):
 	# class Meta:
@@ -13,7 +13,7 @@ class Producto(models.Model):
 
 	#ID
 	#ID del negocio
-
+	business = models.ForeignKey(Negocio, related_name='producto_negocio')
 	name = models.CharField(max_length=60, blank=False)
 	category = models.CharField(max_length=15,choices=CATEGORY_PRODUCTS,default="ropa")
 	quantity = models.IntegerField(default=0)
