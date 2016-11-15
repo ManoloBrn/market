@@ -8,7 +8,7 @@ class Transaction(models.Model):
     #ID Transaction
     #ID vendedor
     #ID del cliente
-    idCliente = models.ForeignKey( settings.AUTH_USER_MODEL,related_name="transaction_cliente")
+    idCliente = models.ForeignKey(settings.AUTH_USER_MODEL,related_name="transaction_cliente")
     idproducto = models.ForeignKey(Producto, related_name="producto_transaction")
     name = models.CharField(max_length=20)
     quantity = models.IntegerField(default=0)
