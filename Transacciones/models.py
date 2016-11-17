@@ -17,3 +17,7 @@ class Transaction(models.Model):
     quantity = models.IntegerField(default=0)
     total = models.FloatField(default=0)
     eventtime = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+    
