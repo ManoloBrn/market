@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from login import views
 from login.views import *
+from . import urls_api
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -24,6 +25,7 @@ urlpatterns = [
     url(r'^login/signedup/$', success ),
     url(r'^inventario/', include("Inventarios.urls"), name="inventarios-root"),
     url(r'^negocios/', include("Negocios.urls"), name="negocios-root"),
-    url(r'^transacciones/', include("Transacciones.urls"), name="transacciones-root")
+    url(r'^transacciones/', include("Transacciones.urls"), name="transacciones-root"),
+    url(r'^api/v1/', include(urls_api))
 
 ]
