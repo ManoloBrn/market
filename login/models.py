@@ -11,3 +11,7 @@ class Cliente(AbstractUser):
     shipping_address= models.CharField(max_length=30, blank=True, null=True) # opcional. Hash
     
 
+class Vendedor(models.Model):
+
+    user = models.OneToOneField(Cliente, on_delete=models.CASCADE)	
+    
