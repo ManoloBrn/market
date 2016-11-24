@@ -5,16 +5,16 @@ from .models import Checkout, Transaction
 from Negocios.models import Negocio
 from .serializers import CheckoutSerializer
 
-class CheckoutCreate(generics.CreateAPIView):
-	#queryset = Checkout.objects.all()
+class CheckoutCreate(generics.ListCreateAPIView):
+	queryset = Checkout.objects.all()
 	serializer_class = CheckoutSerializer
 
-	def post(self, request,  *args, **kwargs):
-		checkout = CheckoutSerializer(data = request.data)
+	# def post(self, request,  *args, **kwargs):
+	# 	checkout = CheckoutSerializer(data = request.data)
 		
-		if checkout.is_valid():
+	# 	if checkout.is_valid():
 			
 			
 
-			return Response(checkout.data, status = status.HTTP_201_CREATED)
-		return self.create(request, *args, **kwargs)
+	# 		return Response(checkout.data, status = status.HTTP_201_CREATED)
+	# 	return self.create(request, *args, **kwargs)

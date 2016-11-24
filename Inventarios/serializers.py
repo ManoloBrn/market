@@ -4,4 +4,4 @@ from .models import Producto
 class ProductoSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Producto
-		exclude = ["business"]
+		fields = ["business", "name", "category", "quantity", "price"]

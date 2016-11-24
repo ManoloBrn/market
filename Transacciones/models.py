@@ -35,32 +35,38 @@ class Checkout(models.Model):
 
     business = models.ForeignKey(Negocio, related_name='checkout_negocio')
     client = models.ForeignKey(Cliente, related_name="checkout_cliente")
+    product = models.ForeignKey(Producto, related_name='checkout_producto')
+
     description = models.CharField(max_length=100, blank=False)
     amount  = models.DecimalField(max_digits=7, decimal_places=2)
     currency = models.CharField(max_length=25, choices=CURRENCY_CHOICES, default=False)
 
-    #details
-    name = models.CharField(max_length=50)
-    phone = models.CharField(max_length=20, blank=False)
-    demail = models.EmailField()
 
-    #items []
-    product = models.ForeignKey(Producto, related_name="checkout_producto")
-
-    itemName = models.CharField(max_length=30)
-    itemdescription = models.CharField(max_length=50)
-    unitprice =  models.DecimalField(max_digits=7, decimal_places=2)
     quantity = models.IntegerField()
-    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
 
-    #billing Adress
-    street1 = models.CharField(max_length=50)
-    street2 = models.CharField(max_length=30)
-    colonia = models.CharField(max_length=30)
 
-    city =  models.CharField(max_length=30)
-    state = models.CharField(max_length=30)
-    szip = models.IntegerField(default=0)
-    country = models.CharField(max_length=30)
-    phone = models.CharField(max_length=20, blank=False)
-    bemail = models.EmailField()
+    # #details
+    # name = models.CharField(max_length=50)
+    # phone = models.CharField(max_length=20, blank=False)
+    # demail = models.EmailField()
+
+    # #items []
+    # product = models.ForeignKey(Producto, related_name="checkout_producto")
+
+    # itemName = models.CharField(max_length=30)
+    # itemdescription = models.CharField(max_length=50)
+    # unitprice =  models.DecimalField(max_digits=7, decimal_places=2)
+    # quantity = models.IntegerField()
+    # category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
+
+    # #billing Adress
+    # street1 = models.CharField(max_length=50)
+    # street2 = models.CharField(max_length=30)
+    # colonia = models.CharField(max_length=30)
+
+    # city =  models.CharField(max_length=30)
+    # state = models.CharField(max_length=30)
+    # szip = models.IntegerField(default=0)
+    # country = models.CharField(max_length=30)
+    # phone = models.CharField(max_length=20, blank=False)
+    # bemail = models.EmailField()
