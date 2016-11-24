@@ -14,3 +14,7 @@ class Cliente(AbstractUser):
 	szip =  models.IntegerField(blank=False, null=False)
 	country = models.CharField(max_length=20, blank=False, null=False)
 
+class Vendedor(models.Model):
+
+    user = models.OneToOneField(Cliente, on_delete=models.CASCADE)	
+    

@@ -21,7 +21,8 @@ from . import urls_api
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^create/$', ClienteCreateView.as_view(), name="create-clientes"),
+    url(r'^createcliente/$', ClienteCreateView.as_view(), name="create-clientes"),
+    url(r'^createvendedor/$', VendedorCreateView.as_view(), name="create-vendedor"),
     url(r'^login/signedup/$', success ),
     url(r'^inventario/', include("Inventarios.urls"), name="inventarios-root"),
     url(r'^negocios/', include("Negocios.urls"), name="negocios-root"),
