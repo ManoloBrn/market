@@ -21,6 +21,7 @@ from . import urls_api
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     url(r'^createcliente/$', ClienteCreateView.as_view(), name="create-clientes"),
     url(r'^createvendedor/$', VendedorCreateView.as_view(), name="create-vendedor"),
     url(r'^login/signedup/$', success ),

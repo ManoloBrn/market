@@ -2,8 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User, AbstractUser
 
 
-class Cliente(AbstractUser): 	
+class Cliente(models.Model): 	
 
+    user = models.OneToOneField(User, on_delete=models.CASCADE)	
     phone = models.IntegerField(blank=True, null=True) #opcional
     cards = models.CharField(max_length=30, blank=True, null=True) #hacer un array. Opcional
     plan = models.CharField(max_length=30, blank=True, null=True) #opcional
@@ -12,6 +13,4 @@ class Cliente(AbstractUser):
     
 
 class Vendedor(models.Model):
-
-    user = models.OneToOneField(Cliente, on_delete=models.CASCADE)	
-    
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
