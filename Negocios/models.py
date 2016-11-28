@@ -1,5 +1,5 @@
 from django.db import models
-from login.models import Cliente, Vendedor
+from login.models import Cliente
 # Create your models here.
 class Negocio(models.Model):
 	class Meta():

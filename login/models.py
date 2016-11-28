@@ -10,7 +10,9 @@ class Cliente(models.Model):
     plan = models.CharField(max_length=30, blank=True, null=True) #opcional
     billing_address = models.CharField(max_length=30, blank=True, null=True) #opcional. Hash
     shipping_address= models.CharField(max_length=30, blank=True, null=True) # opcional. Hash
-    
 
-class Vendedor(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    def __str__(self):
+        return str(self.user)
+
+#class Vendedor(models.Model):
+#    user = models.OneToOneField(User, on_delete=models.CASCADE)
