@@ -12,10 +12,10 @@ class ClienteCreateView(CreateView):
 	fields=["username","password","email","phone","cards","plan","billing_address","shipping_address"]
 	success_url="/login/signedup"
 
-class VendedorCreateView(CreateView):
-	model=Vendedor
-	fields=["username","password","email"]
-	success_url="/login/signedup"
+#class VendedorCreateView(CreateView):
+#	model=Vendedor
+#	fields=["username","password","email"]	
+#	success_url="/login/signedup"
 
 def success(request):
 	return render(request, 'signedup.html')
