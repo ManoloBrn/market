@@ -6,9 +6,9 @@ class Producto(models.Model):
  #        verbose_name = "Producto"
  #        verbose_name_plural = "Productos"
 	CATEGORY_PRODUCTS = (
-			("ropa","ropa"),
-			("alimento","alimentos"),
-			("electronicos","electronicos")
+			("ropa","Ropa"),
+			("alimento","Alimentos"),
+			("electronicos","Electronicos")
 		)
 
 	#ID

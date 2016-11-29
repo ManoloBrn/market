@@ -5,6 +5,10 @@ from rest_framework import viewsets
 
 
 
-class ProductoViewSet(viewsets.ModelViewSet):
+class ProductoViewSet(generics.ListAPIView):
+	queryset = Producto.objects.all()
+	serializer_class = ProductoSerializer
+
+class	ProductoViewCreate(generics.CreateAPIView):
 	queryset = Producto.objects.all()
 	serializer_class = ProductoSerializer
