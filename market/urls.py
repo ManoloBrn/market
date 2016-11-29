@@ -47,6 +47,7 @@ urlpatterns = [
     url('^', include('django.contrib.auth.urls')),
 
     url(r'^api/hello', ApiEndpoint.as_view()),
+    url(r'^secret$', secret_page, name='secret'),
 
 
     url(r'^inventario/', include("Inventarios.urls"), name="inventarios-root"),
