@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from rest_framework import routers
 from django.contrib.auth.views import login
 from django.contrib.auth.views import logout
 from django.conf.urls import url, include
@@ -21,10 +22,13 @@ from login import views
 from login.views import *
 from . import urls_api
 
+
 urlpatterns = [
+
+
     url(r'^admin/', admin.site.urls),
 
-    url(r'^createcliente/$', ClienteCreateView.as_view(), name="create-clientes"),
+    #url(r'^createcliente/$', ClienteCreateView.as_view(), name="create-clientes"),
    # url(r'^createvendedor/$', VendedorCreateView.as_view(), name="create-vendedor"),
     #url(r'^login/signedup/$', success ),
 
@@ -53,6 +57,7 @@ urlpatterns = [
     url(r'^inventario/', include("Inventarios.urls"), name="inventarios-root"),
     url(r'^negocios/', include("Negocios.urls"), name="negocios-root"),
     url(r'^transacciones/', include("Transacciones.urls"), name="transacciones-root"),
+    url(r'^verificar/', include("login.urls"), name="login-root"),
     url(r'^api/v1/', include(urls_api))
 
 ]

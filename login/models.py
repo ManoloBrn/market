@@ -7,12 +7,14 @@ from django.contrib.auth.decorators import login_required
 
 class Cliente(models.Model): 	
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)	
+    #user = models.OneToOneField(User, on_delete=models.CASCADE)	
+    name=models.IntegerField(blank=True, null=True)
     phone = models.IntegerField(blank=True, null=True) #opcional
     cards = models.CharField(max_length=30, blank=True, null=True) #hacer un array. Opcional
     plan = models.CharField(max_length=30, blank=True, null=True) #opcional
     billing_address = models.CharField(max_length=30, blank=True, null=True) #opcional. Hash
     shipping_address= models.CharField(max_length=30, blank=True, null=True) # opcional. Hash
+
 
     def __str__(self):
         return str(self.user)

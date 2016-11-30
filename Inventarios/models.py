@@ -6,9 +6,9 @@ class Producto(models.Model):
  #        verbose_name = "Producto"
  #        verbose_name_plural = "Productos"
 	CATEGORY_PRODUCTS = (
-			("ropa","ropa"),
-			("alimento","alimentos"),
-			("electronicos","electronicos")
+			("ropa","Ropa"),
+			("alimento","Alimentos"),
+			("electronicos","Electronicos")
 		)
 
 	#ID
@@ -20,4 +20,7 @@ class Producto(models.Model):
 	price = models.FloatField(default=0, blank=False)
 
 	def __str__(self):
+		return self.name
+
+	def __unicode__(self):
 		return self.name
