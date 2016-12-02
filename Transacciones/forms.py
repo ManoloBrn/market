@@ -5,4 +5,5 @@ from django.forms import ModelForm
 class CompraForm(ModelForm):
 	class Meta:
 		model = Checkout
-		fields = "__all__"
+		exclude=[]
+		#fields = "__all__"
