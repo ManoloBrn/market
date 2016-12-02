@@ -14,3 +14,11 @@ class CheckoutSerializer(serializers.ModelSerializer):
 		model = Checkout 
 		fields = ["business", "client", "product", 
 		"description", "amount", "currency","quantity", "checkout_negocio","checkout_producto"]
+
+class CheckoutSetSerializer(serializers.ModelSerializer):
+
+	
+	class Meta:
+		model = Checkout 
+		fields = ["business", "client", "product", 
+		"description", "amount", "currency","quantity"]
