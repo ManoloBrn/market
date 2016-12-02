@@ -7,18 +7,19 @@ from Negocios.serializers import NegocioSerializer
 
 class CheckoutSerializer(serializers.ModelSerializer):
 
-	checkout_negocio  = NegocioSerializer(source="business",many = False, read_only=True)
+	#checkout_negocio  = NegocioSerializer(source="business",many = False, read_only=True)
 	#checkout_cliente
-	checkout_producto = ProductoSerializer(source="product",many=False, read_only=False)
-	class Meta:
-		model = Checkout 
-		fields = ["business", "client", "product", 
-		"description", "amount", "currency","quantity", "checkout_negocio","checkout_producto"]
-
-class CheckoutSetSerializer(serializers.ModelSerializer):
-
-	
+	#checkout_producto = ProductoSerializer(source="product",many=False, read_only=False)
 	class Meta:
 		model = Checkout 
 		fields = ["business", "client", "product", 
 		"description", "amount", "currency","quantity"]
+
+class CheckoutSetSerializer(serializers.ModelSerializer):
+	checkout_negocio  = NegocioSerializer(source="business",many = False, read_only=True)
+	checkout_producto = ProductoSerializer(source="product",many=False, read_only=False)
+	
+	class Meta:
+		model = Checkout 
+		fields = ["business", "client", "product", 
+		"description", "amount", "currency","quantity","checkout_negocio", "checkout_producto"]
