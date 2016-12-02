@@ -1,4 +1,12 @@
 from django import forms
+from django.forms import ModelForm
+
+
+
+#    class Meta:
+#        model = MODELNAME
+#        fields = ('',)
+
 
 class CompraForm(forms.Form):
 	name = forms.CharField(max_length=60)
@@ -11,3 +19,6 @@ class CompraForm(forms.Form):
 	estate = forms.CharField(max_length=100)
 	zipcode = forms.IntegerField()
 	country = forms.CharField(max_length=30)
+
+	class Meta:
+		exclude = []
