@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 class Cliente(models.Model): 	
 
     #user = models.OneToOneField(User, on_delete=models.CASCADE)	
-    name=models.IntegerField(blank=True, null=True)
+    name=models.CharField(max_length=30, blank=True, null=True)
     phone = models.IntegerField(blank=True, null=True) #opcional
     cards = models.CharField(max_length=30, blank=True, null=True) #hacer un array. Opcional
     plan = models.CharField(max_length=30, blank=True, null=True) #opcional
@@ -17,7 +17,7 @@ class Cliente(models.Model):
 
 
     def __str__(self):
-        return str(self.user)
+        return str(self.name)
 
 #class Vendedor(models.Model):
 #    user = models.OneToOneField(User, on_delete=models.CASCADE)            

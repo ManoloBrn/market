@@ -4,4 +4,4 @@ class NegocioSerializer(serializers.ModelSerializer):
 	
 	class Meta:
 		model = Negocio
-		fields = ["owner", "name", "streetAddress", "phoneNumber"]
+		fields = ["id","owner", "name", "streetAddress", "phoneNumber"]
